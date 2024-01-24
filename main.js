@@ -4,6 +4,12 @@ const featureOps = document.getElementById('featureOps');
 const companyOps = document.getElementById('companyOps');
 
 
-features.onclick = () => {
-    featureOps.style.display = "block";
-};
+features.addEventListener('click', () => {
+    featureOps.classList.toggle('hide');
+    companyOps.classList.add('hide');
+});
+
+company.addEventListener('click',() =>{
+    companyOps.classList.toggle('hide');
+    featureOps.classList.add('hide');
+});
