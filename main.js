@@ -1,15 +1,13 @@
-const company = document.getElementById('company');
-const features = document.getElementById('features');
-const featureOps = document.getElementById('featureOps');
-const companyOps = document.getElementById('companyOps');
+const link = document.querySelectorAll(".link");
+const company = document.getElementById("company");
+const features = document.getElementById("features");
 
-
-features.addEventListener('click', () => {
-    featureOps.classList.toggle('hide');
-    companyOps.classList.add('hide');
+features.addEventListener("click", () => {
+  features.nextElementSibling.classList.toggle("hide");
+  company.nextElementSibling.classList.add("hide");
 });
 
-company.addEventListener('click',() =>{
-    companyOps.classList.toggle('hide');
-    featureOps.classList.add('hide');
+company.addEventListener("click", () => {
+  company.nextElementSibling.classList.toggle("hide");
+  features.nextElementSibling.classList.add("hide");
 });
