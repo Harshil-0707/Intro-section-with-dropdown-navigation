@@ -27,6 +27,10 @@ header {
   align-items: flex-start;
 }
 
+#links-register1 {
+  display: none;
+}
+
 #log-regis {
   display: flex;
   margin-left: auto;
@@ -200,11 +204,23 @@ header {
 }
 
 @media (max-width: 376px) {
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  nav {
+    display: flex;
+  }
   header {
-    padding: 22px 0 0 20px;
+    padding: 22px 14px 0 20px;
   }
   #nav-links,
   #log-regis {
+    display: none;
+  }
+  #nav-links1,
+  #log-regis1 {
     gap: 20px;
     height: 24%;
     width: 100%;
@@ -212,17 +228,37 @@ header {
     font-size: 14px;
     flex-direction: column;
   }
-  #nav-links {
+  #nav-links1 {
+    top: 6rem;
+    position: absolute;
+  }
+  #log-regis1 {
+    top: 16rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+  }
+  #close-menu:hover,
+  #open-menu:hover {
+    cursor: pointer;
+  }
+  #close-menu {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    display: none;
+  }
+  #nav-links1 {
     margin-left: 30px;
   }
-  #links-register {
+  #links-register1 {
+    top: 0;
     right: 0;
     width: 64%;
     height: 100%;
-    display: flex;
+    display: none;
     position: absolute;
-    flex-direction: column;
-    background-color: #fff;
+    background-color: #ffffff;
   }
   #register {
     margin: 0;
