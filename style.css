@@ -27,7 +27,9 @@ header {
   align-items: flex-start;
 }
 
-#links-register1 {
+#links-register1,
+#nav-links1,
+#log-regis1 {
   display: none;
 }
 
@@ -132,7 +134,7 @@ header {
 }
 #heroHead {
   font-size: 5rem;
-  color: hsl(0, 0%, 8%);
+  color: #141414;
 }
 
 #heroHead span {
@@ -200,10 +202,13 @@ header {
 }
 .arrowImg {
   margin: 0 0 0 10px;
-  position: relative;
 }
 
-@media (max-width: 376px) {
+.arrowImg:focus {
+  transform: rotate(50deg);
+}
+
+@media (max-width: 377px) {
   body {
     height: 100%;
     width: 100%;
@@ -222,21 +227,35 @@ header {
   #nav-links1,
   #log-regis1 {
     gap: 20px;
-    height: 24%;
     width: 100%;
     display: flex;
-    font-size: 14px;
+    font-size: 16px;
+    justify-content: center;
     flex-direction: column;
   }
   #nav-links1 {
-    top: 6rem;
-    position: absolute;
+    margin: 5rem 0 3rem 0;
+    display: flex;
   }
   #log-regis1 {
-    top: 16rem;
-    position: absolute;
     display: flex;
     align-items: center;
+  }
+  .options {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 25px 20px;
+    color: hsl(0, 0%, 41%);
+    background-color: hsl(0, 0%, 100%);
+  }
+  #optionList:nth-child(even) {
+    margin: 20px 0;
+  }
+  #open-menu {
+    top: 20px;
+    right: 20px;
+    position: absolute;
   }
   #close-menu:hover,
   #open-menu:hover {
@@ -259,6 +278,7 @@ header {
     display: none;
     position: absolute;
     background-color: #ffffff;
+    box-shadow: -200px 0px #000000bf;
   }
   #register {
     margin: 0;

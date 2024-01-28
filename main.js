@@ -1,27 +1,25 @@
-const closeMenu = document.getElementById("close-menu");
 const linksRegister = document.getElementById("links-register1");
 const openMenu = document.getElementById("open-menu");
-const company = document.getElementById("company");
-const features = document.getElementById("features");
+const company = document.querySelectorAll(".two");
+const features = document.querySelectorAll(".one");
+const icons = document.querySelectorAll(".arrowImg img");
 
-features.addEventListener("click", () => {
-  company.nextElementSibling.classList.add("hide");
-  features.nextElementSibling.classList.toggle("hide");
-});
+features.forEach((fun) => openDropDown(fun));
+company.forEach((com) => openDropDown(com));
 
-company.addEventListener("click", () => {
-  company.nextElementSibling.classList.toggle("hide");
-  features.nextElementSibling.classList.add("hide");
-});
+function openDropDown(args) {
+  args.addEventListener("click", () => {
+    args.nextElementSibling.classList.toggle("hide");
+  });
+}
 
 openMenu.onclick = () => {
-  openMenu.style.display = "none";
-  closeMenu.style.display = "block";
-  linksRegister.style.display = "block";
-};
-
-closeMenu.onclick = () => {
-  closeMenu.style.display = "none";
-  openMenu.style.display = "block";
-  linksRegister.style.display = "none";
+  openMenu.classList.toggle("active");
+  if (openMenu.classList.contains("active")) {
+    linksRegister.style.display = "block";
+    openMenu.src = "./images/icon-close-menu.svg";
+  } else {
+    linksRegister.style.display = "none";
+    openMenu.src = "./images/icon-menu.svg";
+  }
 };
