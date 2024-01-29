@@ -53,8 +53,8 @@ header {
 }
 
 .link {
-  margin-right: 40px;
   display: flex;
+  margin-right: 40px;
 }
 
 .relative {
@@ -106,7 +106,7 @@ header {
 #hero main {
   display: flex;
   margin-top: 3.98rem;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 #heroLeft {
@@ -114,11 +114,7 @@ header {
   margin: 5.5rem 0 0 4rem;
 }
 
-.link:hover {
-  color: #000;
-  cursor: pointer;
-}
-
+.link:hover,
 #optionList:hover {
   color: #000;
   cursor: pointer;
@@ -126,8 +122,6 @@ header {
 
 #heroRight img {
   width: 58%;
-  float: right;
-  margin-right: 8rem;
   @media (max-width: 1440px) {
     width: 68%;
   }
@@ -204,11 +198,7 @@ header {
   margin: 0 0 0 10px;
 }
 
-.arrowImg:focus {
-  transform: rotate(50deg);
-}
-
-@media (max-width: 377px) {
+@media (max-width: 376px) {
   body {
     height: 100%;
     width: 100%;
@@ -285,6 +275,9 @@ header {
     width: 80%;
     padding: 12px 0;
     text-align: center;
+  }
+  .hide .arrowImg .downArrow {
+    transform: rotate(100deg);
   }
   main {
     width: 100%;
