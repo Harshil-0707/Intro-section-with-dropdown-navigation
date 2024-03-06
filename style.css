@@ -16,27 +16,40 @@ header {
   padding: 26px 38px;
 }
 
+nav {
+  display: flex;
+}
+
+#navigation,
+#nav-links {
+  display: flex;
+  align-items: flex-start;
+}
+
 #navigation,
 #nav-links,
 #links-register {
   width: 100%;
-  display: flex;
   font-size: 14px;
   font-weight: 600;
   color: hsl(0, 0%, 41%);
-  align-items: flex-start;
 }
 
-#links-register1,
-#nav-links1,
-#log-regis1 {
+@media (min-width: 980px) {
+  #links-register {
+    align-items: flex-start;
+    display: flex !important;
+  }
+}
+
+#links-register {
   display: none;
 }
 
 #log-regis {
   display: flex;
-  margin-left: auto;
   font-weight: 500;
+  margin-left: auto;
   align-items: center;
   margin: -10px 0 0 0;
   color: hsl(0, 0%, 41%);
@@ -46,7 +59,7 @@ header {
   margin: 0 70px 0 0;
 }
 
-@media (min-width: 375px) {
+@media (min-width: 981px) {
   #menu {
     display: none;
   }
@@ -67,6 +80,10 @@ header {
   color: hsl(0, 0%, 41%);
   background-color: hsl(0, 0%, 100%);
   box-shadow: 2px 2px 34px 2px #c9c9c9;
+}
+
+.hide {
+  display: none;
 }
 
 .featureOps {
@@ -111,7 +128,7 @@ header {
 
 #heroLeft {
   width: 40%;
-  margin: 5.5rem 0 0 4rem;
+  margin: 1rem 0 0 4rem;
 }
 
 .link:hover,
@@ -127,8 +144,8 @@ header {
   }
 }
 #heroHead {
-  font-size: 5rem;
   color: #141414;
+  font-size: clamp(2.1rem, 8vw, 4.5rem);
 }
 
 #heroHead span {
@@ -169,7 +186,7 @@ header {
   font-weight: 500;
   padding: 14px 18px;
   border-radius: 12px;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   color: hsl(0, 0%, 98%);
   border: 2px solid hsl(0, 0%, 8%);
   background-color: hsl(0, 0%, 8%);
@@ -191,50 +208,34 @@ header {
     width: 84%;
   }
 }
-.hide {
-  display: none;
-}
 .arrowImg {
   margin: 0 0 0 10px;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 981px) {
   body {
-    height: 100%;
     width: 100%;
-    overflow: hidden;
-  }
-  nav {
-    display: flex;
+    height: 100%;
   }
   header {
     padding: 22px 14px 0 20px;
   }
-  #nav-links,
-  #log-regis {
-    display: none;
-  }
-  #nav-links1,
-  #log-regis1 {
-    gap: 20px;
-    width: 100%;
-    display: flex;
-    font-size: 16px;
-    justify-content: center;
+  #links-register {
+    position: absolute;
     flex-direction: column;
   }
-  #nav-links1 {
-    margin: 5rem 0 3rem 0;
-    display: flex;
-  }
-  #log-regis1 {
-    display: flex;
-    align-items: center;
+
+  #close-menu {
+    top: 20px;
+    right: 20px;
+    display: none;
+    position: absolute;
   }
   .options {
     padding: 0;
     box-shadow: none;
     border-radius: 0;
+    position: static;
     margin: 25px 20px;
     color: hsl(0, 0%, 41%);
     background-color: hsl(0, 0%, 100%);
@@ -251,33 +252,11 @@ header {
   #open-menu:hover {
     cursor: pointer;
   }
-  #close-menu {
-    top: 20px;
-    right: 20px;
-    position: absolute;
-    display: none;
-  }
-  #nav-links1 {
-    margin-left: 30px;
-  }
-  #links-register1 {
-    top: 0;
-    right: 0;
-    width: 64%;
-    height: 100%;
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    box-shadow: -200px 0px #000000bf;
-  }
   #register {
     margin: 0;
     width: 80%;
     padding: 12px 0;
     text-align: center;
-  }
-  .hide .arrowImg .downArrow {
-    transform: rotate(100deg);
   }
   main {
     width: 100%;
@@ -287,12 +266,43 @@ header {
     margin: 15px 0 0 0;
   }
   #heroLeft {
-    margin: 0;
     width: 100%;
     text-align: center;
+    margin: 0 0 2rem 0;
   }
   #heroRight {
     width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #nav-links,
+  #log-regis {
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #nav-links {
+    display: flex;
+    padding: 5rem 0 3rem 2rem;
+  }
+  #log-regis {
+    display: flex;
+    align-items: center;
+  }
+
+  #links-register {
+    top: 0;
+    right: 0;
+    width: 64%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: -40dvw 0px #000000bf;
   }
   #heroPara {
     width: 100%;
@@ -310,16 +320,16 @@ header {
     margin: 0 0 3rem 0;
   }
   #heroRight #phone {
-    width: 100%;
+    width: 70%;
     display: block;
     margin: 0 0 2rem 0;
   }
   #desktop {
     display: none;
   }
-  #heroHead {
+  /* #heroHead {
     font-size: 36px;
-  }
+  } */
   #heroHead span {
     display: inline;
   }
